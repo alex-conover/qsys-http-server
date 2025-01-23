@@ -14,26 +14,43 @@ HttpServer is a simple HTTP server implementation for Lua. It allows you to crea
 First, require the HttpServer module:
 
 ```lua
+<<<<<<< HEAD
 Sever = require('HttpServer')
+=======
+require('http_server')
+>>>>>>> 40f7bc2f27016916b308b68a4eaa809a08036047
 ```
 
 Create a new HttpServer instance:
 
 ```lua
+<<<<<<< HEAD
 local server = Server.New()
+=======
+Server = HttpServer.New()
+>>>>>>> 40f7bc2f27016916b308b68a4eaa809a08036047
 ```
 
 Use the provided middleware for JSON parsing and CORS handling:
 
 ```lua
+<<<<<<< HEAD
 server:use(HttpServer.json())
 server:use(HttpServer.cors())
+=======
+Server:use(HttpServer.json())
+Server:use(HttpServer.cors())
+>>>>>>> 40f7bc2f27016916b308b68a4eaa809a08036047
 ```
 
 Define routes for your API:
 
 ```lua
+<<<<<<< HEAD
 server:get('/greeting', function(req, res)
+=======
+Server:get('/greeting', function(req, res)
+>>>>>>> 40f7bc2f27016916b308b68a4eaa809a08036047
   res.send('Hello world!')
 end)
 ```
@@ -41,7 +58,11 @@ end)
 Start the server on a specific port:
 
 ```lua
+<<<<<<< HEAD
 server:listen(9091)
+=======
+Server:listen(9091)
+>>>>>>> 40f7bc2f27016916b308b68a4eaa809a08036047
 ```
 
 ## Example
@@ -49,6 +70,7 @@ server:listen(9091)
 This example demonstrates how to create a simple API with route handlers and middleware:
 
 ```lua
+<<<<<<< HEAD
 Server = require('HttpServer')
 
 API = Server.New()
@@ -56,6 +78,15 @@ API = Server.New()
 -- Apply JSON and CORS middleware
 API:use(Server.json())
 API:use(Server.cors())
+=======
+require('http_server')
+
+API = HttpServer.New()
+
+-- Apply JSON and CORS middleware
+API:use(HttpServer.json())
+API:use(HttpServer.cors())
+>>>>>>> 40f7bc2f27016916b308b68a4eaa809a08036047
 
 -- Define a simple GET route
 API:get('/', function(req, res)
@@ -71,7 +102,11 @@ API:listen(9091)
 To allow cross-origin requests, apply the CORS middleware:
 
 ```lua
+<<<<<<< HEAD
 server:use(HttpServer.cors());
+=======
+MyServer:use(HttpServer.cors());
+>>>>>>> 40f7bc2f27016916b308b68a4eaa809a08036047
 ```
 
 This will allow requests from all origins to all supported methods.
@@ -79,7 +114,11 @@ This will allow requests from all origins to all supported methods.
 For endpoints that use the :all() route, you can specify the default list of permitted methods like so:
 
 ```lua
+<<<<<<< HEAD
 servere:use(HttpServer.cors({
+=======
+MyServer:use(HttpServer.cors({
+>>>>>>> 40f7bc2f27016916b308b68a4eaa809a08036047
   default_methods = {'GET','POST'}
 }))
 ```
@@ -88,6 +127,7 @@ The default set is `GET`,`HEAD`,`PUT`,`PATCH`,`POST`, and `DELETE`.
 
 *Note: do not include OPTIONS, as this is automatically included.*
 
+<<<<<<< HEAD
 ## Websockets
 This is an example of how to use the websocket feature of the HttpServer module.
 
@@ -126,6 +166,8 @@ end)
 server:listen(8001)
 ```
 
+=======
+>>>>>>> 40f7bc2f27016916b308b68a4eaa809a08036047
 ## API
 
 ### HttpServer.New()
@@ -173,11 +215,15 @@ Adds a DELETE route to the server with the specified path and handler function.
 Adds a route for any HTTP verb to the server with the specified path and handler function.
 
 ### server:ws(path, handler)
+<<<<<<< HEAD
 Adds a websocket listener at the given path. `handler` is invoked with a "Websocket" object, that has the fields `Write`, and `IsConnected`. Handlers are available for the following events:
 - `Conneted`: Invoked when a client connects to the websocket.
 - `Data`: Invoked when a message is received from the client.
 - `Closed`: Invoked when the client disconnects.
 - `Error`: Invoked when an error occurs.
+=======
+Adds a websocket listener at the given path. `handler` is invoked with a "Websocket" object, that has the fields `Write`, and `IsConnected`.
+>>>>>>> 40f7bc2f27016916b308b68a4eaa809a08036047
 
 ## License
 
