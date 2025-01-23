@@ -1,0 +1,7 @@
+{
+  "version": "0.1.0",
+  "type": "LuaModule",
+  "author": "aconover@salesforce.com",
+  "description": "HTTP Server Library for Q-SYS with WebSocket support.",
+  "requiredVersion": "9.5"
+}
